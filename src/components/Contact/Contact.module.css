@@ -16,6 +16,7 @@
   font-size: 80px;
   font-weight: 700;
   letter-spacing: 4px;
+  text-align: center;
 }
 
 .text p {
@@ -51,15 +52,34 @@
   .container {
     flex-direction: column;
     gap: 23px;
+    max-width: 100%;
+    padding: 20px;
   }
 
   .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .text p {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 
   .links {
     align-items: center;
+    gap: 15px;
+  }
+
+  .link {
+    gap: 15px;
+  }
+
+  .link a {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 }
