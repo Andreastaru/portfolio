@@ -26,7 +26,7 @@
   font-family: var(--font-roboto);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 100%,
     rgba(255, 255, 255, 0) 120%
   );
   -webkit-text-fill-color: transparent;
@@ -42,18 +42,18 @@
 
 .contactBtn {
   text-decoration: none;
-  background-color: var(--color-primary);
+  background-color: var(--color-btn);
   color: var(--color-text);
   border-radius: 100px;
   font-size: 30px;
   font-weight: 600;
   padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.85);
   cursor: pointer;
 }
 
 .contactBtn:hover {
-  background-color: var(--color-bg);
+  background-color: var(--color-btnhover);
   box-shadow: 0 0 20px 0 #ffff;
 }
 
@@ -82,35 +82,35 @@
 
 .topBlur {
   position: absolute;
-  width: 50vw;
-  height: 50vw;
+  width: 40vw;
+  height: 40vw;
   min-width: 350px;
   min-width: 350px;
   top: -128px;
   left: 10vw;
   border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
+  background: rgba(25, 55, 77, 0.4);
   filter: blur(100px);
   z-index: 0;
 }
 
 .bottomBlur {
   position: absolute;
-  width: 70vw;
-  height: 50vw;
+  width: 40vw;
+  height: 40vw;
   min-width: 350px;
   min-width: 250px;
   top: 246px;
   right: -9vw;
   border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
+  background: rgba(25, 55, 77, 0.4);
   filter: blur(100px);
   z-index: 0;
 }
 
 .popup {
   z-index: 10;
-  background: var(--color-bg);
+  background: rgba(85, 85, 85, 1);
   flex-direction: row;
   gap: 13px;
   border-radius: 50px;
@@ -136,18 +136,18 @@
 
 .popup button {
   cursor: pointer;
-  background-color: var(--color-primary);
+  background-color: var(--color-btn);
   color: var(--color-text);
   border-radius: 50px;
   font-size: 20px;
   font-weight: 600;
   padding: 17px 26px;
   margin: 5% 30%;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 .popup button:hover {
-  background-color: var(--color-bg);
+  background-color: var(--color-btnhover);
   box-shadow: 0 0 20px 0 #ffff;
 }
 

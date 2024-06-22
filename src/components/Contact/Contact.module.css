@@ -6,21 +6,22 @@
   background-color: var(--color-secondary);
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100vw;
   padding: 58px 10%;
   gap: 10px;
+  align-items: center;
 }
 
 .text {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 700;
   letter-spacing: 4px;
   text-align: center;
 }
 
 .text p {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
   letter-spacing: 2px;
   text-align: center;
@@ -29,15 +30,18 @@
 .links {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   list-style: none;
   gap: 26px;
+  text-align: center;
 }
 
 .link {
   display: flex;
   align-items: center;
   gap: 25px;
+  width: 50%;
+  text-align: center;
 }
 
 .link a {
@@ -46,6 +50,7 @@
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 1.5px;
+  width: 50%;
 }
 
 @media screen and (max-width: 830px) {
@@ -69,8 +74,9 @@
   }
 
   .links {
-    align-items: center;
+    align-items: baseline;
     gap: 15px;
+    justify-content: left;
   }
 
   .link {

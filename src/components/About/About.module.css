@@ -57,6 +57,7 @@
 
 .aboutItem:hover {
   background-size: 100% 100%;
+  cursor: default;
 }
 
 .aboutItem h3 {
