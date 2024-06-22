@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Portfolio Website",
+    "imageSrc": "projects/project.png",
+    "description": "I created this website to showcase my skills and learn more in the process.",
+    "skills": [
+      { "name": "React", "url": "https://react.dev/" },
+      {
+        "name": "JavaScript",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics"
+      },
+      {
+        "name": "CSS",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+      }
+    ],
+    "demo": "currentUrl",
+    "source": "https://www.github.com"
+  }
+]

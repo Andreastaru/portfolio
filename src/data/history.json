@@ -1,0 +1,18 @@
+[
+  {
+    "role": "QA Engineer",
+    "organisation": "COOP Pank",
+    "startDate": "May, 2023",
+    "endDate": "Present",
+    "experiences": ["Automated E2E Tests", "Leading by example in UAT"],
+    "imageSrc": "history/cooppank.png"
+  },
+  {
+    "role": "Studying Software Testing",
+    "organisation": "Software Development Academy",
+    "startDate": "Aug, 2022",
+    "endDate": "Dec, 2022",
+    "experiences": ["Risk-based Testing", "Test Design Techniques"],
+    "imageSrc": "history/sda.png"
+  }
+]
