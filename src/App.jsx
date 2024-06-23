@@ -5,16 +5,32 @@ import { About } from "./components/About/About";
 import { Experience } from "./components/Experience/Experience";
 import { Projects } from "./components/Projects/Projects";
 import { Contact } from "./components/Contact/Contact";
+import { Loadingscreen } from "./components/Loadingscreen/Loadingscreen";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, []);
   return (
     <div className={styles.App}>
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
+      {isLoading ? (
+        <Loadingscreen />
+      ) : (
+        <div className={styles.appContent}>
+          <Navbar />
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </div>
+      )}
     </div>
   );
 }
