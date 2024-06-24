@@ -7,8 +7,8 @@ export const Hero = () => {
   const popupRef = useRef(null);
 
   const handleImageClick = (event) => {
-    event.stopPropagation(); // Stop the event from bubbling up to the parent elements
-    setShowBugPopup(true);
+    event.stopPropagation();
+    setShowBugPopup(!showBugPopup);
   };
 
   const handleClosePopup = useCallback(() => {

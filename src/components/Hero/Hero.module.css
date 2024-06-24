@@ -54,7 +54,8 @@
 
 .contactBtn:hover {
   background-color: var(--color-btnhover);
-  box-shadow: 0 0 20px 0 #ffff;
+  box-shadow: 0 0 10px 0 #ffff;
+  transition: 0.2s;
 }
 
 .heroImg {
@@ -66,6 +67,7 @@
   cursor: pointer;
   max-width: 40%;
   height: auto;
+  margin-bottom: 10px;
 }
 
 @keyframes floating {
@@ -110,7 +112,7 @@
 
 .popup {
   z-index: 10;
-  background: rgba(85, 85, 85, 1);
+  background: var(--color-bg);
   flex-direction: row;
   gap: 13px;
   border-radius: 50px;
@@ -143,12 +145,13 @@
   font-weight: 600;
   padding: 17px 26px;
   margin: 5% 30%;
-  border: 1px solid black;
+  border: 1px solid transparent;
 }
 
 .popup button:hover {
   background-color: var(--color-btnhover);
-  box-shadow: 0 0 20px 0 #ffff;
+  box-shadow: 0 0 10px 0 #ffff;
+  transition: 0.2s;
 }
 
 @media only screen and (max-width: 830px) {

@@ -4,9 +4,9 @@
   --color-primary: lightgrey;
   --color-secondary: black;
   --color-dark: darkgray;
-  --color-bg: gray;
-  --color-btnhover: rgba(25, 55, 77, 0.7);
-  --color-btn: rgb(45, 45, 45);
+  --color-bg: #383838;
+  --color-btnhover: #393636;
+  --color-btn: #212121;
 
   /* Fonts */
   --font-roboto: "Roboto";

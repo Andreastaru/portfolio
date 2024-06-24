@@ -70,5 +70,6 @@
 
 .link:hover {
   background-color: var(--color-btnhover);
-  box-shadow: 0 0 20px 0 #ffff;
+  box-shadow: 0 0 10px 0 #ffff;
+  transition: 0.2s;
 }
