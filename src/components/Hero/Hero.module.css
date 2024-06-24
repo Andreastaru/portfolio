@@ -65,7 +65,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   cursor: pointer;
-  max-width: 40%;
+  max-width: 30%;
   height: auto;
   margin-bottom: 10px;
 }
