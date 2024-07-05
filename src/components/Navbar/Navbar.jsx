@@ -8,11 +8,12 @@ import i18next from "../../../services/i18next";
 export const Navbar = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lng, setLng] = useState(i18next.language); // store the current language
+  const [lng, setLng] = useState(i18next.language);
 
   const changeLng = (lng) => {
     i18next.changeLanguage(lng);
-    setLng(lng); // update the state with the new language
+    setLng(lng);
+    document.documentElement.lang = lng;
   };
 
   const handleDocumentClick = (event) => {
