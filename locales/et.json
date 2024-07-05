@@ -7,9 +7,9 @@
     "Contact": "Kontakt"
   },
   "Hero": {
-    "Contact": "Võta ühendust",
+    "Contact": "Saada mulle meil",
     "Me": "Hei, olen Andreas!",
-    "About": "Ma olen hetkel Tarkvara Testija, kellel huvi testide automatiseerimise ja tarkvaraarenduse vastu. Võta minuga ühendust kui tahaksid rohkem teada saada!",
+    "About": "Ma olen Tarkvara Testija, kellel huvi testide automatiseerimise ja tarkvaraarenduse vastu. Võta minuga ühendust!",
     "Bug": "Sa leidsid bugi!",
     "Close": "Sulge"
   },
@@ -18,7 +18,7 @@
     "QA": "Tarkvara Testija",
     "Front-end": "Tarkvaraarendaja",
     "QA-info": "Ma olen Tarkvara Testija, kellel kogemus testide automatiseerimisega. Kasutanud olen Seleniumi või WebdriverIO'd, mis on ka Seleniumi põhine. Keeltest TypeScript ja JavaScript.",
-    "Front-info": "Õpin aktiivselt Reacti tundma, et aidata kaasa testimisele ning arendamisele."
+    "Front-info": "Õpin aktiivselt Reacti tundma, et aidata kaasa testimisele ning arendamisele. Vaikselt arendan ka enda tarbeks nagu see sait siin."
   },
   "Experience": {
     "Experience": "Kogemus",
