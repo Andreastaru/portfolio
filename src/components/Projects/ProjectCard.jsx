@@ -1,10 +1,21 @@
 import { getImageUrl } from "../../utils";
 import PropTypes from "prop-types";
 import styles from "./ProjectCard.module.css";
+import { useTranslation } from "react-i18next";
 
 export const ProjectCard = ({
   project: { title, imageSrc, skills, demo, source, description },
 }) => {
+  const { t } = useTranslation();
+  const projectTitle = {
+    "Portfolio Website": t("Projects.Portfolio"),
+  };
+
+  const projectDescription = {
+    "I created this website to showcase my skills and learn more in the process.":
+      t("Projects.PortfolioDescription"),
+  };
+
   return (
     <div className={styles.container}>
       <img
@@ -12,8 +23,10 @@ export const ProjectCard = ({
         alt={` Image of ${title}`}
         className={styles.image}
       />
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
+      <h3 className={styles.title}>{`${projectTitle[title]}`}</h3>
+      <p
+        className={styles.description}
+      >{`${projectDescription[description]}`}</p>
       <ul className={styles.skills}>
         {skills.map((skill, id) => {
           return (
@@ -41,7 +54,7 @@ export const ProjectCard = ({
           Demo
         </a>
         <a href={source} className={styles.link}>
-          Source
+          {`${t("Projects.ProjectSource")}`}
         </a>
       </div>
     </div>

@@ -1,8 +1,6 @@
-@import "../../vars.css";
-
 .container {
   color: var(--color-text);
-  margin-top: 120px;
+  margin-top: 4em; /* relative unit */
   background: linear-gradient(
     180deg,
     rgba(56, 56, 56, 0) 0%,
@@ -11,23 +9,23 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%; /* changed from 100vw to 100% */
-  padding: 2em; /* changed from 58px 15% to a more flexible unit */
-  gap: 10px;
+  width: 100%;
+  padding: 2em;
+  gap: 1em; /* reduced gap */
   align-items: center;
 }
 
 .text {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   text-align: center;
 }
 
 .text p {
-  font-size: 0.5em;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 1px;
   text-align: center;
 }
 
@@ -35,14 +33,15 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  gap: 26px;
+  gap: 1em;
   text-align: center;
 }
 
 .link {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 1em;
+  max-width: 100%;
   text-align: center;
   justify-content: center;
 }
@@ -50,56 +49,63 @@
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1em; /* reduced font size */
   font-weight: 400;
-  letter-spacing: 1.5px;
-  width: 50%;
+  letter-spacing: 1px;
+  width: 100%; /* full width */
 }
 
-@media screen and (max-width: 990px) {
+/* Breakpoint for tablets and larger screens */
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 2em;
+    padding: 3em;
+  }
+
+  .text {
+    font-size: 3em;
+  }
+
+  .links {
+    gap: 2em;
+  }
+
+  .link {
+    gap: 2em;
+  }
+
+  .link a {
+    font-size: 1.5em;
+  }
+}
+
+/* Breakpoint for mobile phones */
+@media screen and (max-width: 480px) {
   .container {
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1em;
     padding: 1em;
   }
 
   .text {
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size: 1.5em;
   }
 
   .text p {
     font-size: 1em;
-    font-weight: 400;
-    letter-spacing: 1px;
   }
 
   .links {
     gap: 1em;
-    width: 100%;
-    margin-right: 15%;
   }
 
   .link {
     gap: 1em;
-    max-width: 100%;
     flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
   }
 
   .link a {
     font-size: 1em;
-    font-weight: 400;
-    letter-spacing: 1px;
-    display: block;
-    text-align: center;
-  }
-
-  .link img {
-    max-width: 10%;
-    height: auto;
-    display: block;
   }
 }

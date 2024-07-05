@@ -1,0 +1,48 @@
+{
+  "Nav": {
+    "Portfolio": "Portfoolio",
+    "About": "Minust",
+    "Experience": "Kogemus",
+    "Projects": "Projektid",
+    "Contact": "Kontakt"
+  },
+  "Hero": {
+    "Contact": "Võta ühendust",
+    "Me": "Hei, olen Andreas!",
+    "About": "Ma olen hetkel Tarkvara Testija, kellel huvi testide automatiseerimise ja tarkvaraarenduse vastu. Võta minuga ühendust kui tahaksid rohkem teada saada!",
+    "Bug": "Sa leidsid bugi!",
+    "Close": "Sulge"
+  },
+  "About": {
+    "About": "Minust",
+    "QA": "Tarkvara Testija",
+    "Front-end": "Tarkvaraarendaja",
+    "QA-info": "Ma olen Tarkvara Testija, kellel kogemus testide automatiseerimisega. Kasutanud olen Seleniumi või WebdriverIO'd, mis on ka Seleniumi põhine. Keeltest TypeScript ja JavaScript.",
+    "Front-info": "Õpin aktiivselt Reacti tundma, et aidata kaasa testimisele ning arendamisele."
+  },
+  "Experience": {
+    "Experience": "Kogemus",
+    "Company": "COOP Pank",
+    "QA": "Tarkvara Testija",
+    "task": "Automatiseeritud E2E testid",
+    "taskTwo": "Eeskujuks UAT kujul",
+    "School": "Software Development Academy",
+    "Student": "Tarkvara Testija kursus",
+    "taskSchool": "Riski põhine testimine",
+    "taskSchoolTwo": "Testimise metoodika",
+    "startDateComp": "Mai 2023",
+    "startDateStudy": "Aug 2022",
+    "endDateComp": "Jätkuv",
+    "endDateStudy": "Dets 2022"
+  },
+  "Projects": {
+    "Projects": "Projektid",
+    "ProjectSource": "Kood",
+    "Portfolio": "Portfoolio veebisait",
+    "PortfolioDescription": "Ma tegin selle veebisaidi, et näidata enda oskusi ning, et samas õppida ja rakendada uusi oskusi."
+  },
+  "Contact": {
+    "Contact": "Kontakt",
+    "ReachOut": "Võta ühendust!"
+  }
+}

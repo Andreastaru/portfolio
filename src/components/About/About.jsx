@@ -1,12 +1,13 @@
 /* import React from "react"; */
 import { getImageUrl } from "../../utils";
-
+import { useTranslation } from "react-i18next";
 import styles from "./About.module.css";
 
 export const About = () => {
+  const { t } = useTranslation();
   return (
     <section className={styles.container} id="about">
-      <h2 className={styles.title}>About</h2>
+      <h2 className={styles.title}>{t("About.About")}</h2>
       <div className={styles.content}>
         <img
           src={getImageUrl("about/aboutImage.png")}
@@ -17,22 +18,15 @@ export const About = () => {
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
             <div className={styles.aboutItemText}>
-              <h3>QA Engineer</h3>
-              <p>
-                I am a QA Engineer with experience in automation using
-                JavaScript or TypeScript. I have used Selenium and WebdriverIO,
-                which is also selenium based
-              </p>
+              <h3>{t("About.QA")}</h3>
+              <p>{t("About.QA-info")}</p>
             </div>
           </li>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
             <div className={styles.aboutItemText}>
-              <h3>Front-end Developer</h3>
-              <p>
-                I am actively learning about React to help test and develop
-                front-end applications.
-              </p>
+              <h3>{t("About.Front-end")}</h3>
+              <p>{t("About.Front-info")}</p>
             </div>
           </li>
         </ul>

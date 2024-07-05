@@ -140,6 +140,7 @@
   cursor: pointer;
   background-color: var(--color-btn);
   color: var(--color-text);
+  font: var(--font-roboto);
   border-radius: 50px;
   font-size: 20px;
   font-weight: 600;

@@ -1,8 +1,10 @@
 import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Hero = () => {
+  const { t } = useTranslation();
   const [showBugPopup, setShowBugPopup] = useState(false);
   const popupRef = useRef(null);
 
@@ -38,13 +40,10 @@ export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I am Andreas!</h1>
-        <p className={styles.description}>
-          I am a QA Engineer with ambition for the Automation and Front-end
-          Development. Reach out if you would like to learn more!
-        </p>
+        <h1 className={styles.title}>{t("Hero.Me")}</h1>
+        <p className={styles.description}>{t("Hero.About")}</p>
         <a className={styles.contactBtn} href="mailto:andreastaru007@gmail.com">
-          Contact me
+          {t("Hero.Contact")}
         </a>
       </div>
       <img
@@ -55,9 +54,9 @@ export const Hero = () => {
       />
       {showBugPopup && (
         <div ref={popupRef} className={styles.popup}>
-          <p>You found a bug!</p>
+          <p>{t("Hero.Bug")}</p>
           <button type="button" onClick={handleClosePopup}>
-            Close
+            {t("Hero.Close")}
           </button>
         </div>
       )}

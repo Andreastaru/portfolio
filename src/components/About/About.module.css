@@ -67,6 +67,7 @@
 
 .aboutItem p {
   font-size: 25px;
+  margin-top: 0.1em;
 }
 
 @media screen and (max-width: 830px) {
