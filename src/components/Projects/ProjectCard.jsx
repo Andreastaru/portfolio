@@ -9,11 +9,17 @@ export const ProjectCard = ({
   const { t } = useTranslation();
   const projectTitle = {
     "Portfolio Website": t("Projects.Portfolio"),
+    "E2E tests boilerplate": t("Projects.WebdriverIO"),
+    "SQL tests boilerplate": t("Projects.Postgres"),
   };
 
   const projectDescription = {
     "I created this website to showcase my skills and learn more in the process.":
       t("Projects.PortfolioDescription"),
+    "I created this boilerplate so it will be easier to start automating E2E tests.":
+      t("Projects.WebdriverIODescription"),
+    "I created this boilerplate so it will be easier to test in database and also report test results.":
+      t("Projects.PostgresDescription"),
   };
 
   return (
@@ -46,13 +52,17 @@ export const ProjectCard = ({
           );
         })}
       </ul>
-      <div className={styles.links}>
-        <a
-          href={demo === "currentUrl" ? window.location.href : demo}
-          className={styles.link}
-        >
-          Demo
-        </a>
+      <div
+        className={demo ? styles.links : `${styles.links} ${styles.centered}`}
+      >
+        {demo && (
+          <a
+            href={demo === "currentUrl" ? window.location.href : demo}
+            className={styles.link}
+          >
+            Demo
+          </a>
+        )}
         <a href={source} className={styles.link}>
           {`${t("Projects.ProjectSource")}`}
         </a>
@@ -71,7 +81,7 @@ ProjectCard.propTypes = {
         url: PropTypes.string,
       })
     ).isRequired,
-    demo: PropTypes.string.isRequired,
+    demo: PropTypes.string,
     source: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,

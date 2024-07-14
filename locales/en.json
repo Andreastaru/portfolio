@@ -39,7 +39,11 @@
     "Projects": "Projects",
     "ProjectSource": "Source",
     "Portfolio": "Portfolio Website",
-    "PortfolioDescription": "I created this website to showcase my skills and learn more in the process."
+    "PortfolioDescription": "I created this website to showcase my skills and learn more in the process.",
+    "WebdriverIO": "E2E testing boilerplate",
+    "Postgres": "SQL testing boilerplate",
+    "WebdriverIODescription": "I created this boilerplate to make it easier to start automating E2E tests.",
+    "PostgresDescription": "I created this boilerplate so it will be easier to run tests against a database."
   },
   "Contact": {
     "Contact": "Contact",

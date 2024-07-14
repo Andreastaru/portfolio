@@ -39,7 +39,11 @@
     "Projects": "Projektid",
     "ProjectSource": "Kood",
     "Portfolio": "Portfoolio veebisait",
-    "PortfolioDescription": "Ma tegin selle veebisaidi, et näidata enda oskusi ning, et samas õppida ja rakendada uusi oskusi."
+    "PortfolioDescription": "Ma tegin selle veebisaidi, et näidata enda oskusi ning samas õppida ja rakendada uusi oskusi.",
+    "WebdriverIO": "E2E testide projekt",
+    "Postgres": "SQL testide projekt",
+    "WebdriverIODescription": "Ma tegin selle projekti, et oleks lihtsam alustada E2E testide automatiseerimisega.",
+    "PostgresDescription": "Ma tegin selle projetki, et oleks baasis lihtsam testida ning raporteerida testi tulemusi."
   },
   "Contact": {
     "Contact": "Kontakt",

@@ -16,5 +16,39 @@
     ],
     "demo": "currentUrl",
     "source": "https://github.com/Andreastaru/portfolio"
+  },
+  {
+    "title": "E2E tests boilerplate",
+    "imageSrc": "projects/automation.png",
+    "description": "I created this boilerplate so it will be easier to start automating E2E tests.",
+    "skills": [
+      { "name": "WebdrverIO", "url": "https://webdriver.io/" },
+      {
+        "name": "TypeScript",
+        "url": "https://www.typescriptlang.org/"
+      },
+      {
+        "name": "Mocha",
+        "url": "https://mochajs.org/"
+      }
+    ],
+    "source": "https://github.com/Andreastaru/webdriverio-boilerplate"
+  },
+  {
+    "title": "SQL tests boilerplate",
+    "imageSrc": "projects/sql.png",
+    "description": "I created this boilerplate so it will be easier to test in database and also report test results.",
+    "skills": [
+      { "name": "Node-postgres", "url": "https://node-postgres.com/" },
+      {
+        "name": "JavaScript",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics"
+      },
+      {
+        "name": "Mocha",
+        "url": "https://mochajs.org/"
+      }
+    ],
+    "source": "https://github.com/Andreastaru/node-postgres-boilerplate"
   }
 ]
