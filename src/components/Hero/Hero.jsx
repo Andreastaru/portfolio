@@ -77,6 +77,14 @@ export const Hero = () => {
 
   useEffect(() => {
     if (formSubmitted) {
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 1000);
+    }
+  }, [formSubmitted]);
+
+  useEffect(() => {
+    if (formSubmitted) {
       toast.success(t("Hero.Success"), {
         position: "top-center",
         autoClose: 1500,
@@ -126,6 +134,7 @@ export const Hero = () => {
           <ContactForm
             onFormSubmit={() => {
               setFormSubmitted(true);
+              setShowContactForm(false);
             }}
           />
         </div>
