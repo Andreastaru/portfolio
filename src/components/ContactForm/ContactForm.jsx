@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import { PuffLoader } from "react-spinners";
 import PropTypes from "prop-types";
 
-export const ContactForm = ({ onFormSubmit }) => {
+export const ContactForm = ({ onFormSubmit, onClose }) => {
   const { t } = useTranslation();
   const textareaRef = React.createRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
+  const [formSent, setFormSent] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 830);
 
   useEffect(() => {
@@ -48,14 +48,22 @@ export const ContactForm = ({ onFormSubmit }) => {
 
       if (res.success) {
         console.log("Success", res);
-        setEmailSent(true);
+        setFormSent(true);
         onFormSubmit();
       }
     }
   };
 
+  const handleClose = () => {
+    setFormSent(false);
+    onClose();
+  };
+
   return (
-    <section className={emailSent ? styles.emailSent : styles.contact}>
+    <section className={formSent ? styles.formSent : styles.contact}>
+      <button className={styles.closeButton} onClick={handleClose}>
+        X
+      </button>
       <form onSubmit={onSubmit}>
         <h2>{t("ContactForm.Contact")}</h2>
         <div>
@@ -140,4 +148,5 @@ export const ContactForm = ({ onFormSubmit }) => {
 
 ContactForm.propTypes = {
   onFormSubmit: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };

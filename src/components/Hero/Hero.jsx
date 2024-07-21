@@ -165,6 +165,11 @@ export const Hero = () => {
               setFormSubmitted(true);
               setShowContactForm(false);
             }}
+            onClose={() => {
+              setFormSubmitted(false);
+              setShowContactForm(false);
+              setShowToast(false);
+            }}
           />
         </div>
       )}
