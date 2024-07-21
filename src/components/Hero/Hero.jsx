@@ -69,6 +69,12 @@ export const Hero = () => {
   );
 
   useEffect(() => {
+    if (showContactForm) {
+      setIsContactFormOpening(false);
+    }
+  }, [showContactForm]);
+
+  useEffect(() => {
     document.addEventListener("click", handleDocumentClick);
     return () => {
       document.removeEventListener("click", handleDocumentClick);
