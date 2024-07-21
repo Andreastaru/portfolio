@@ -11,7 +11,8 @@
     "Me": "Hi, I am Andreas!",
     "About": "I am QA Engineer with ambition for the Automation and Front-end Development. Reach out if you would like to learn more!",
     "Bug": "You found a bug!",
-    "Close": "Close"
+    "Close": "Close",
+    "Success": "Email sent successfully!"
   },
   "About": {
     "About": "About",
@@ -48,5 +49,17 @@
   "Contact": {
     "Contact": "Contact",
     "ReachOut": "Feel free to reach out!"
+  },
+  "ContactForm": {
+    "Contact": "Contact Form",
+    "Name": "Name",
+    "NameInfo": "Enter your name",
+    "Email": "Email Address",
+    "EmailInfo": "Enter your email",
+    "Message": "Your Message",
+    "MessageInfo": "Enter your message",
+    "Send": "Send Message",
+    "RequiredFieldError": "This field is required",
+    "InvalidEmailError": "Email address '{{email}}' is not valid"
   }
 }

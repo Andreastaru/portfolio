@@ -10,6 +10,11 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lng, setLng] = useState(i18next.language);
 
+  const languages = [
+    { code: "et", label: "ET" },
+    { code: "en", label: "EN" },
+  ];
+
   const changeLng = (lng) => {
     i18next.changeLanguage(lng);
     setLng(lng);
@@ -64,20 +69,16 @@ export const Navbar = () => {
         </ul>
       </div>
       <div className={styles.langSwitcher}>
-        <button
-          type="button"
-          className={lng === "et" ? styles.active : ""}
-          onClick={() => changeLng("et")}
-        >
-          ET
-        </button>
-        <button
-          type="button"
-          className={lng === "en" ? styles.active : ""}
-          onClick={() => changeLng("en")}
-        >
-          EN
-        </button>
+        {languages.map((language) => (
+          <button
+            key={language.code}
+            type="button"
+            className={lng === language.code ? styles.active : ""}
+            onClick={() => changeLng(language.code)}
+          >
+            {language.label}
+          </button>
+        ))}
       </div>
     </nav>
   );

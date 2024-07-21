@@ -2,20 +2,43 @@ import { getImageUrl } from "../../utils";
 import styles from "./Hero.module.css";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { ContactForm } from "../ContactForm/ContactForm";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Hero = () => {
   const { t } = useTranslation();
   const [showBugPopup, setShowBugPopup] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
   const popupRef = useRef(null);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleImageClick = (event) => {
     event.stopPropagation();
     setShowBugPopup(!showBugPopup);
+    setShowContactForm(false);
+    setFormSubmitted(false);
   };
 
   const handleClosePopup = useCallback(() => {
     setShowBugPopup(false);
   }, [setShowBugPopup]);
+
+  const handleCloseContactForm = useCallback(() => {
+    setShowContactForm(false);
+  }, [setShowContactForm]);
+
+  const [isContactFormOpening, setIsContactFormOpening] = useState(false);
+
+  const handleContactClick = () => {
+    if (showContactForm) {
+      setShowContactForm(false);
+    } else {
+      setIsContactFormOpening(true);
+      setShowContactForm(true);
+      setFormSubmitted(false);
+    }
+  };
 
   const handleDocumentClick = useCallback(
     (event) => {
@@ -26,8 +49,23 @@ export const Hero = () => {
       ) {
         handleClosePopup();
       }
+      if (
+        showContactForm &&
+        !isContactFormOpening &&
+        !event.target.closest("#contactForm") &&
+        !event.target.classList.contains("contactBtn") &&
+        !event.target.closest(".contactBtn")
+      ) {
+        handleCloseContactForm();
+      }
     },
-    [handleClosePopup, showBugPopup]
+    [
+      handleClosePopup,
+      handleCloseContactForm,
+      showBugPopup,
+      showContactForm,
+      isContactFormOpening,
+    ]
   );
 
   useEffect(() => {
@@ -37,12 +75,35 @@ export const Hero = () => {
     };
   }, [handleDocumentClick]);
 
+  useEffect(() => {
+    if (formSubmitted) {
+      toast.success(t("Hero.Success"), {
+        position: "top-center",
+        autoClose: 1500,
+        hideProgressBar: false,
+        newestOnTop: false,
+        closeOnClick: true,
+        rtl: false,
+        pauseOnFocusLoss: true,
+        draggable: true,
+        pauseOnHover: true,
+        theme: "dark",
+      });
+    }
+  }, [formSubmitted, t]);
+
   return (
-    <section className={styles.container}>
+    <section
+      className={
+        showContactForm || formSubmitted
+          ? styles.containerContact
+          : styles.container
+      }
+    >
       <div className={styles.content}>
         <h1 className={styles.title}>{t("Hero.Me")}</h1>
         <p className={styles.description}>{t("Hero.About")}</p>
-        <a className={styles.contactBtn} href="mailto:andreastaru007@gmail.com">
+        <a className={styles.contactBtn} onClick={handleContactClick}>
           {t("Hero.Contact")}
         </a>
       </div>
@@ -60,8 +121,32 @@ export const Hero = () => {
           </button>
         </div>
       )}
+      {showContactForm && !formSubmitted && (
+        <div id="contactForm">
+          <ContactForm
+            onFormSubmit={() => {
+              setFormSubmitted(true);
+            }}
+          />
+        </div>
+      )}
       <div className={styles.topBlur} />
       <div className={styles.bottomBlur} />
+      <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={true}
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable={true}
+        pauseOnHover={true}
+        theme="dark"
+        style={{
+          zIndex: 3,
+        }}
+      />
     </section>
   );
 };

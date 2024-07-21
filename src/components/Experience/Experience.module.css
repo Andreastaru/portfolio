@@ -52,7 +52,7 @@
 
 .skill p {
   font-size: 22px;
-  font-family: var(--font-roboto);
+  font-family: var(--font-main);
   font-weight: 500;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .historyItemDetails {
-  font-family: var(--font-roboto);
+  font-family: var(--font-main);
 }
 
 .historyItemDetails h3 {

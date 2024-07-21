@@ -7,11 +7,12 @@
     "Contact": "Kontakt"
   },
   "Hero": {
-    "Contact": "Saada meil",
+    "Contact": "Saada E-mail",
     "Me": "Hei, olen Andreas!",
     "About": "Ma olen Tarkvara Testija, kellel huvi testide automatiseerimise ja tarkvaraarenduse vastu. Võta minuga ühendust!",
     "Bug": "Sa leidsid bugi!",
-    "Close": "Sulge"
+    "Close": "Sulge",
+    "Success": "E-mail on saadetud!"
   },
   "About": {
     "About": "Minust",
@@ -48,5 +49,17 @@
   "Contact": {
     "Contact": "Kontakt",
     "ReachOut": "Võta ühendust!"
+  },
+  "ContactForm": {
+    "Contact": "Võta ühendust",
+    "Name": "Nimi",
+    "NameInfo": "Sisesta enda nimi",
+    "Email": "E-mail",
+    "EmailInfo": "Sisesta enda e-mail",
+    "Message": "Sõnum",
+    "MessageInfo": "Sisesta enda sõnum",
+    "Send": "Saada",
+    "RequiredFieldError": "See väli on kohustuslik",
+    "InvalidEmailError": "Email '{{email}}' ei ole õige"
   }
 }

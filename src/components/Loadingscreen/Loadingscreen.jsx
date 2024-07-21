@@ -3,16 +3,11 @@ import { PuffLoader } from "react-spinners";
 import FontFaceObserver from "fontfaceobserver";
 
 const Loadingscreen = () => {
-  const robotoFont = new FontFaceObserver("Roboto");
+  const Font = new FontFaceObserver("Outfit");
 
-  robotoFont
-    .load()
-    .then(() => {
-      document.documentElement.style.fontFamily = "Roboto, sans-serif";
-    })
-    .catch(() => {
-      document.documentElement.style.fontFamily = "Arial, sans-serif";
-    });
+  Font.load().then(() => {
+    document.documentElement.style.fontFamily = "Outfit, sans-serif";
+  });
 
   return (
     <div className={styles.loader}>
