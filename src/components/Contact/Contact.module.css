@@ -1,6 +1,6 @@
 .container {
   color: var(--color-text);
-  margin-top: 4em; /* relative unit */
+  margin-top: 4em;
   background: linear-gradient(
     180deg,
     rgba(56, 56, 56, 0) 0%,
@@ -11,7 +11,7 @@
   justify-content: center;
   width: 100%;
   padding: 2em;
-  gap: 1em; /* reduced gap */
+  gap: 1em;
   align-items: center;
 }
 
@@ -49,13 +49,12 @@
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 1em; /* reduced font size */
+  font-size: 1em;
   font-weight: 400;
   letter-spacing: 1px;
-  width: 100%; /* full width */
+  width: 100%;
 }
 
-/* Breakpoint for tablets and larger screens */
 @media screen and (min-width: 768px) {
   .container {
     flex-direction: row;
@@ -80,7 +79,6 @@
   }
 }
 
-/* Breakpoint for mobile phones */
 @media screen and (max-width: 480px) {
   .container {
     flex-direction: column;

@@ -1,4 +1,3 @@
-/* import React from "react"; */
 import { getImageUrl } from "../../utils";
 import { useTranslation } from "react-i18next";
 import styles from "./About.module.css";
