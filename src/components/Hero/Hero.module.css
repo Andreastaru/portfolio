@@ -189,6 +189,10 @@
     flex-direction: column-reverse;
   }
 
+  .containerContact {
+    flex-direction: column-reverse;
+  }
+
   .content {
     align-items: center;
   }

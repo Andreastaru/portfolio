@@ -12,6 +12,8 @@ export const Hero = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const popupRef = useRef(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isContactFormOpening, setIsContactFormOpening] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const handleImageClick = (event) => {
     event.stopPropagation();
@@ -27,8 +29,6 @@ export const Hero = () => {
   const handleCloseContactForm = useCallback(() => {
     setShowContactForm(false);
   }, [setShowContactForm]);
-
-  const [isContactFormOpening, setIsContactFormOpening] = useState(false);
 
   const handleContactClick = () => {
     if (showContactForm) {
@@ -76,12 +76,22 @@ export const Hero = () => {
   }, [handleDocumentClick]);
 
   useEffect(() => {
-    if (formSubmitted) {
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 1000);
-    }
-  }, [formSubmitted]);
+    const toastifyDiv = document.querySelector(".Toastify");
+    const observer = new MutationObserver(() => {
+      const toastElements = toastifyDiv.querySelectorAll(".Toastify__toast");
+      const isToastPresent = toastElements.length > 0;
+      setShowToast(isToastPresent);
+    });
+
+    observer.observe(toastifyDiv, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [setShowToast]);
 
   useEffect(() => {
     if (formSubmitted) {
@@ -96,14 +106,27 @@ export const Hero = () => {
         draggable: true,
         pauseOnHover: true,
         theme: "dark",
+        onOpen: () => {
+          setTimeout(() => {
+            setFormSubmitted(false);
+          }, 100);
+        },
       });
     }
   }, [formSubmitted, t]);
 
+  useEffect(() => {
+    const toastElement = document.getElementsByClassName(
+      "Toastify__toast-container"
+    );
+    const isToastPresent = toastElement.length > 0;
+    setShowToast(isToastPresent);
+  }, []);
+
   return (
     <section
       className={
-        showContactForm || formSubmitted
+        showContactForm || showToast
           ? styles.containerContact
           : styles.container
       }
@@ -141,6 +164,7 @@ export const Hero = () => {
       )}
       <div className={styles.topBlur} />
       <div className={styles.bottomBlur} />
+
       <ToastContainer
         position="top-center"
         autoClose={1500}
@@ -154,6 +178,7 @@ export const Hero = () => {
         theme="dark"
         style={{
           zIndex: 3,
+          textAlign: "center",
         }}
       />
     </section>
