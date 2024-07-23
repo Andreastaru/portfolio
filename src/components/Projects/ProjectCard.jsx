@@ -1,4 +1,4 @@
-import { getImageUrl } from "../../utils";
+import { getImageUrl, openInNewTab } from "../../utils";
 import PropTypes from "prop-types";
 import styles from "./ProjectCard.module.css";
 import { useTranslation } from "react-i18next";
@@ -39,7 +39,7 @@ export const ProjectCard = ({
             <li key={id} className={styles.skill}>
               {skill.url ? (
                 <span
-                  onClick={() => window.open(skill.url, "_blank")}
+                  onClick={() => openInNewTab(skill.url)}
                   title={skill.url}
                   className={styles.clickable}
                 >
@@ -59,11 +59,12 @@ export const ProjectCard = ({
           <a
             href={demo === "currentUrl" ? window.location.href : demo}
             className={styles.link}
+            target="_blank"
           >
             Demo
           </a>
         )}
-        <a href={source} className={styles.link}>
+        <a href={source} className={styles.link} target="_blank">
           {`${t("Projects.ProjectSource")}`}
         </a>
       </div>

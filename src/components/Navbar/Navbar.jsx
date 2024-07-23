@@ -22,7 +22,12 @@ export const Navbar = () => {
   };
 
   const handleDocumentClick = (event) => {
-    if (!event.target.closest(`.${styles.navbar}`)) {
+    if (
+      !event.target.closest(`.${styles.navbar}`) ||
+      event.target.closest(`.${styles.langSwitcher}`) ||
+      (event.target.closest(`.${styles.navbar}`) &&
+        !event.target.closest(`.${styles.menuBtn}`))
+    ) {
       setMenuOpen(false);
     }
   };
