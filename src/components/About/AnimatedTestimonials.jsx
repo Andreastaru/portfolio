@@ -134,7 +134,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                   }}
                   className="inline-block"
                 >
-                  From {word}&nbsp;
+                  From {word}
                 </motion.span>
               ))}
             </motion.p>
