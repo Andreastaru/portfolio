@@ -1,0 +1,52 @@
+{
+  "Nav": {
+    "Portfolio": "Portafolio",
+    "About": "Acerca de",
+    "Experience": "Experiencia",
+    "Projects": "Proyectos",
+    "Contact": "Contacto"
+  },
+  "Hero": {
+    "Contact": "Contáctame",
+    "Me": "Hola, soy Andreas!",
+    "About": "Soy ingeniero de QA con ambición por la automatización y el desarrollo front-end. ¡Ponte en contacto si quieres saber más!",
+    "Bug": "¡Has encontrado un error!",
+    "Close": "Cerrar"
+  },
+  "About": {
+    "About": "Acerca de",
+    "QA": "Ingeniero de QA",
+    "Front-end": "Desarrollador front-end",
+    "QA-info": "Soy un ingeniero de QA con experiencia en automatización utilizando JavaScript o TypeScript. He utilizado Selenium y WebdriverIO, que también se basa en Selenium",
+    "Front-info": "Estoy aprendiendo activamente sobre React para ayudar a probar y desarrollar aplicaciones front-end."
+  },
+  "Experience": {
+    "Experience": "Experiencia",
+    "Company": "COOP Pank",
+    "QA": "Ingeniero de QA",
+    "task": "Pruebas E2E automatizadas",
+    "taskTwo": "Liderazgo por ejemplo en UAT",
+    "School": "Academia de Desarrollo de Software",
+    "Student": "Estudiando Pruebas de Software",
+    "taskSchool": "Pruebas basadas en riesgos",
+    "taskSchoolTwo": "Técnicas de diseño de pruebas",
+    "startDateComp": "Mayo, 2023",
+    "startDateStudy": "Agosto, 2022",
+    "endDateComp": "Presente",
+    "endDateStudy": "Diciembre, 2022"
+  },
+  "Projects": {
+    "Projects": "Proyectos",
+    "ProjectSource": "Fuente",
+    "Portfolio": "Sitio web del portafolio",
+    "PortfolioDescription": "Creé este sitio web para mostrar mis habilidades y aprender más en el proceso.",
+    "WebdriverIO": "Plantilla de prueba E2E",
+    "Postgres": "Plantilla de prueba SQL",
+    "WebdriverIODescription": "Creé esta plantilla para hacer que sea más fácil comenzar a automatizar pruebas E2E.",
+    "PostgresDescription": "Creé esta plantilla para que sea más fácil ejecutar pruebas contra una base de datos."
+  },
+  "Contact": {
+    "Contact": "Contacto",
+    "ReachOut": "No dudes en ponerte en contacto!"
+  }
+}

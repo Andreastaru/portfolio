@@ -1,90 +1,111 @@
-import { useState, useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
 
-import styles from "./Navbar.module.css";
-import { getImageUrl } from "../../utils";
-import { useTranslation } from "react-i18next";
-import i18next from "../../../services/i18next";
+import { IoHomeOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
+import { AppContext } from "../../context/AppProvider";
+import { AnimatedHamburgerButton } from "./AnimatedHamburgerButton ";
 
-export const Navbar = () => {
-  const { t } = useTranslation();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [lng, setLng] = useState(i18next.language);
-
-  const languages = [
-    { code: "et", label: "ET" },
-    { code: "en", label: "EN" },
-  ];
-
-  const changeLng = (lng) => {
-    i18next.changeLanguage(lng);
-    setLng(lng);
-    document.documentElement.lang = lng;
-  };
-
-  const handleDocumentClick = (event) => {
-    if (
-      !event.target.closest(`.${styles.navbar}`) ||
-      event.target.closest(`.${styles.langSwitcher}`) ||
-      (event.target.closest(`.${styles.navbar}`) &&
-        !event.target.closest(`.${styles.menuBtn}`))
-    ) {
-      setMenuOpen(false);
-    }
-  };
+const Navbar = () => {
+  const { currentColor, setIsNavbarMobileOpen, isNavbarMobileOpen, setActive } =
+    useContext(AppContext);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    document.addEventListener("click", handleDocumentClick);
-    return () => {
-      document.removeEventListener("click", handleDocumentClick);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <nav className={styles.navbar}>
-      <a className={styles.title} href="/">
-        {t("Nav.Portfolio")}
-      </a>
-      <div className={styles.menu}>
-        <img
-          className={styles.menuBtn}
-          src={
-            menuOpen
-              ? getImageUrl("nav/closeIcon.png")
-              : getImageUrl("nav/menuIcon.png")
-          }
-          alt="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-        />
-        <ul
-          className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
-          onClick={() => setMenuOpen(false)}
-        >
-          <li>
-            <a href="#about">{t("Nav.About")}</a>
-          </li>
-          <li>
-            <a href="#experience">{t("Nav.Experience")}</a>
-          </li>
-          <li>
-            <a href="#projects">{t("Nav.Projects")}</a>
-          </li>
-          <li>
-            <a href="#contact">{t("Nav.Contact")}</a>
-          </li>
-        </ul>
-      </div>
-      <div className={styles.langSwitcher}>
-        {languages.map((language) => (
-          <button
-            key={language.code}
-            type="button"
-            className={lng === language.code ? styles.active : ""}
-            onClick={() => changeLng(language.code)}
+    <div
+      className={`flex justify-center items-center ${
+        isMobile ? "h-25 " : "h-50"
+      } `}
+    >
+      <nav className="bg-[rgb(225,225,225)]/15 flex justify-between items-center gap-16 rounded-full backdrop-blur-md backdrop-opacity-60 text-white shadow-lg custom-navbar-padding">
+        <ul className="flex gap-8 flex-grow">
+          <NavLink
+            to="/"
+            onClick={() => {
+              setActive(false);
+              setIsNavbarMobileOpen(false);
+            }}
+            className={({ isActive }) =>
+              isActive ? "" : "text-white hover:text-gray-300 transition-colors"
+            }
+            style={({ isActive }) => (isActive ? { color: currentColor } : {})}
           >
-            {language.label}
-          </button>
-        ))}
-      </div>
-    </nav>
+            <IoHomeOutline size={24} />
+          </NavLink>
+
+          {!isMobile && (
+            <>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? ""
+                    : "text-white hover:text-gray-300 transition-colors"
+                }
+                style={({ isActive }) =>
+                  isActive ? { color: currentColor } : {}
+                }
+              >
+                About Me
+              </NavLink>
+
+              <NavLink
+                to="/journey"
+                className={({ isActive }) =>
+                  isActive
+                    ? ""
+                    : "text-white hover:text-gray-300 transition-colors"
+                }
+                style={({ isActive }) =>
+                  isActive ? { color: currentColor } : {}
+                }
+              >
+                My Journey
+              </NavLink>
+
+              <NavLink
+                to="/work"
+                className={({ isActive }) =>
+                  isActive
+                    ? ""
+                    : "text-white hover:text-gray-300 transition-colors"
+                }
+                style={({ isActive }) =>
+                  isActive ? { color: currentColor } : {}
+                }
+              >
+                My Work
+              </NavLink>
+            </>
+          )}
+        </ul>
+        {!isMobile ? (
+          <NavLink
+            to="/contact"
+            className="flex-shrink-0 bg-gradient-to-r from-blue-600 to-green-500 py-1 px-6 rounded-lg shadow-xl text-white text-md  hover:from-blue-400 hover:to-green-600 custom-padding-left-right"
+          >
+            Say Hello
+          </NavLink>
+        ) : (
+          <AnimatedHamburgerButton
+            onClick={() => {
+              setActive((pv) => !pv);
+              setIsNavbarMobileOpen(!isNavbarMobileOpen);
+            }}
+          />
+        )}
+      </nav>
+    </div>
   );
 };
+
+export default Navbar;

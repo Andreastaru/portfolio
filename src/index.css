@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@import "./vars.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,4 +9,168 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #020617;
+  font-family: var(--font-main);
+}
+
+body {
+  min-height: 100vh;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+.text-dark {
+  color: #020617;
+}
+
+.hero-img {
+  z-index: 1;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  max-width: 30%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.custom-padding-bottom-xs {
+  padding-bottom: 1rem;
+}
+
+.custom-padding-bottom {
+  padding-bottom: 2.5rem;
+}
+
+.custom-padding-top {
+  padding-top: 2.5rem;
+}
+
+.custom-padding-bottom2x {
+  padding-bottom: 4rem;
+}
+
+.custom-padding-bottom3x {
+  padding-bottom: 6rem;
+}
+
+.custom-padding-left-right {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.custom-navbar-padding {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+}
+
+input,
+textarea {
+  color: var(--color-text);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-text);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.max-h-20 {
+  max-height: 20px;
+}
+
+.container {
+  margin-top: 76px;
+  color: var(--color-text);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container-grid-gap-100 {
+  margin-top: 76px;
+  color: var(--color-text);
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  gap: 100px;
+}
+
+.container-without-margin-top {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+  background-color: rgba(2, 6, 23, 0.5);
+}
+
+.no-visible-scrollbar {
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-padding-button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 0.5rem;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+  scrollbar-track-color: transparent;
+}
+
+.padding-left-top-xs {
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.scrollable-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  gap: 3rem;
 }

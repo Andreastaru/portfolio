@@ -10,24 +10,40 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aeternity/aepp-sdk": "^14.0.0",
     "@fontsource/outfit": "^5.0.13",
+    "@hookform/resolvers": "^4.1.2",
+    "@tailwindcss/postcss": "^4.0.8",
+    "@tailwindcss/vite": "^4.0.8",
+    "clsx": "^2.1.1",
+    "contentful": "^11.5.0",
     "dotenv": "^16.4.5",
     "fontfaceobserver": "^2.3.0",
-    "i18next": "^23.11.5",
+    "framer-motion": "^12.4.7",
+    "motion": "^12.4.7",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-i18next": "^14.1.2",
+    "react-hook-form": "^7.54.2",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.2.0",
     "react-spinners": "^0.14.1",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "react-use-measure": "^2.1.7",
+    "tailwind-merge": "^3.0.2",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.8",
     "vite": "^5.3.1"
   }
 }
