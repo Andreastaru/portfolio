@@ -9,6 +9,7 @@ export const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [testingProjects, setTestingProjects] = useState([]);
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -16,6 +17,7 @@ export const Projects = () => {
       const fetchedProjects = await getProjects();
       setTestingProjects(fetchedTestingProjects);
       setProjects(fetchedProjects);
+      setIsLoading(false);
     }
     fetchData();
   }, []);
@@ -28,6 +30,9 @@ export const Projects = () => {
     }
   };
 
+  if (isLoading) {
+    return <div className="text-white">Loading...</div>;
+  }
   return (
     <div>
       <h1 className="text-white text-3xl mb-4 text-center custom-padding-bottom ">

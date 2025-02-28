@@ -34,11 +34,11 @@ export function AboutCard({ picture }) {
             <p className="text-sm text-gray-400">2 min read</p>
           </div>
         </div>
-        <div className="text content gap-2 container">
-          <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10 text-left ">
+        <div className="text content gap-2 container container-card">
+          <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10 text-center md:text-left ">
             Brief introduction about myself
           </h1>
-          <p className="font-normal text-sm text-gray-50 relative z-10 my-4 text-left custom-padding-bottom-xs">
+          <p className="font-normal text-sm text-gray-50 relative z-10 my-4 text-center md:text-left custom-padding-bottom-xs">
             Click on the card to find out more
           </p>
         </div>

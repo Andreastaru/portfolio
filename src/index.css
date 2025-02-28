@@ -56,6 +56,10 @@ body {
   padding-top: 2.5rem;
 }
 
+.custom-padding-top-xl {
+  padding-top: 5rem;
+}
+
 .custom-padding-bottom2x {
   padding-bottom: 4rem;
 }
@@ -95,6 +99,12 @@ textarea {
   color: var(--color-text);
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.container-card {
+  @media (max-width: 768px) {
+    margin-left: 0 !important;
+  }
 }
 
 .container-grid-gap-100 {
@@ -173,4 +183,10 @@ textarea {
   align-items: center;
   height: 70vh;
   gap: 3rem;
+}
+
+.paragraph-mobile-padding-bottom {
+  @media (max-width: 480px) {
+    margin-bottom: 2rem !important;
+  }
 }

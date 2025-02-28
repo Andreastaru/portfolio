@@ -116,3 +116,33 @@ const _fetchPictures = async () => {
 export const getPictures = async () => {
   return await _fetchPictures();
 };
+
+let fetchedParagraphs = null;
+const _fetchParagraphs = async () => {
+  if (fetchedParagraphs) {
+    return fetchedParagraphs;
+  }
+  try {
+    const response = await client.getEntries({
+      content_type: "experience",
+    });
+    const paragraphs = response.items.map((item) => {
+      const { title, paragraph } = item.fields;
+
+      return {
+        title,
+        paragraph,
+      };
+    });
+
+    fetchedParagraphs = paragraphs;
+    return paragraphs;
+  } catch (error) {
+    console.error("Error fetching data from Contentful:", error);
+  }
+};
+
+export const getParagraphByTitle = async (title) => {
+  const allParagraphs = await _fetchParagraphs();
+  return allParagraphs.find((paragraph) => paragraph.title === title);
+};

@@ -18,17 +18,17 @@ function About() {
       const fetchedPictures = await getPictures();
       const fetchedCertifications = await getCertifications();
       setCertifications(fetchedCertifications);
-      setIsLoading(false);
 
-      const filteredData = fetchedPictures.filter(
+      const filteredDataForPicture = fetchedPictures.filter(
         (item) => item.title === "andreas"
       );
 
-      if (filteredData.length > 0) {
-        setPictureOfAndreas(filteredData[0].picture_url);
+      if (filteredDataForPicture.length > 0) {
+        setPictureOfAndreas(filteredDataForPicture[0].picture_url);
       } else {
-        setPictureOfAndreas(null);
+        console.error("Couldn't find a picture with Title 'andreas'");
       }
+      setIsLoading(false);
     }
 
     fetchData();

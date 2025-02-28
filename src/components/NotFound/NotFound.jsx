@@ -1,8 +1,28 @@
-import { getImageUrl } from "../../utils/utils";
 import { useLocation } from "react-router-dom";
 import SimpleButton from "../Utils/SimpleButton";
+import { useState, useEffect } from "react";
+import { getPictures } from "../../services/contentful";
 
 const NotFound = () => {
+  const [pictureOfBug, setPictureOfBug] = useState(null);
+  useEffect(() => {
+    async function fetchData() {
+      const fetchedPictures = await getPictures();
+
+      const filteredDataForPicture = fetchedPictures.filter(
+        (item) => item.title === "bug"
+      );
+
+      if (filteredDataForPicture.length > 0) {
+        setPictureOfBug(filteredDataForPicture[0].picture_url);
+      } else {
+        console.error("Couldn't find a picture with Title 'bug'");
+      }
+    }
+
+    fetchData();
+  }, []);
+
   const location = useLocation();
   const { pathname } = location;
   return (
@@ -11,7 +31,7 @@ const NotFound = () => {
         Couldn’t find page ’{pathname}’
       </h1>
       <img
-        src={getImageUrl("hero/heroImage.png")}
+        src={pictureOfBug}
         alt="bug"
         className="z-10 animate-floating max-w-[30%] h-auto mb-4 hero-img"
       />
