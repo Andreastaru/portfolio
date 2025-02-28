@@ -74,7 +74,7 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block"
+                className="inline-block text-white"
               >
                 {letter}
               </motion.span>
