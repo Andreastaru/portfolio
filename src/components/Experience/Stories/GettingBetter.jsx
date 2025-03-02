@@ -9,5 +9,5 @@ export const GettingBetter = ({ paragraph }) => {
 };
 
 GettingBetter.propTypes = {
-  paragraph: PropTypes.string.isRequired,
+  paragraph: PropTypes.node.isRequired,
 };

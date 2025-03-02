@@ -9,5 +9,5 @@ export const GotTheJob = ({ paragraph }) => {
 };
 
 GotTheJob.propTypes = {
-  paragraph: PropTypes.string.isRequired,
+  paragraph: PropTypes.node.isRequired,
 };

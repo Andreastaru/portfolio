@@ -104,15 +104,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
             <h3 className="text-2xl font-bold  text-white">
               {testimonials[active].name}
             </h3>
-            <p className="text-sm text-gray-500 dark:text-neutral-500 hover:dark:text-white">
-              <a
-                href={testimonials[active].cert_url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Check out {testimonials[active].name}&apos;s certification here!
-              </a>
-            </p>
+
             <motion.p className="text-lg text-neutral-300">
               {testimonials[active].from.split(" ").map((word, index) => (
                 <motion.span
@@ -138,8 +130,20 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                 </motion.span>
               ))}
             </motion.p>
+            <p
+              className="text-sm text-gray-500 dark:text-neutral-500 hover:dark:text-white"
+              style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 1)" }}
+            >
+              <a
+                href={testimonials[active].cert_url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Check out {testimonials[active].name}&apos;s certification here!
+              </a>
+            </p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="flex gap-4 pt-12 md:pt-0 padding-top-mobile">
             <button
               onClick={handlePrev}
               className="h-7 w-7 rounded-full bg-neutral-800  flex items-center justify-center group/button hover:cursor-pointer"

@@ -47,7 +47,7 @@ export const Projects = () => {
             >
               <img
                 alt={project.project_name}
-                className="h-full w-full absolute inset-0 object-cover opacity-50"
+                className="h-full w-full absolute inset-0 object-cover opacity-30"
                 src={
                   localStorage.getItem(project.project_name) ||
                   project.project_photo
@@ -56,10 +56,16 @@ export const Projects = () => {
                   localStorage.setItem(project.project_name, e.target.src)
                 }
               />
-              <p className="font-bold text-white text-lg z-10">
+              <p
+                className="font-bold text-white text-lg z-10"
+                style={{ textShadow: "2px 2px px rgba(0, 0, 0, 1)" }}
+              >
                 {project.project_name}
               </p>
-              <p className="font-normal text-base text-neutral-200 mt-4 z-10 drop-shadow-xl">
+              <p
+                className="font-normal text-base text-neutral-200 mt-4 z-10 drop-shadow-xl"
+                style={{ textShadow: "2px 2px px rgba(0, 0, 0, 1)" }}
+              >
                 {project.description}
               </p>
               <div className="flex space-x-2 gap-2 z-10">
@@ -87,7 +93,7 @@ export const Projects = () => {
             >
               <img
                 alt={project.project_name}
-                className="h-full w-full absolute inset-0 object-cover opacity-50"
+                className="h-full w-full absolute inset-0 object-cover opacity-30"
                 src={
                   localStorage.getItem(project.project_name) ||
                   project.project_photo
@@ -96,10 +102,16 @@ export const Projects = () => {
                   localStorage.setItem(project.project_name, e.target.src)
                 }
               />
-              <p className="font-bold text-white text-lg z-10">
+              <p
+                className="font-bold text-white text-lg z-10"
+                style={{ textShadow: "2px 2px px rgba(0, 0, 0, 1)" }}
+              >
                 {project.project_name}
               </p>
-              <p className="font-normal text-base text-neutral-200 mt-4 z-10 drop-shadow-xl">
+              <p
+                className="font-normal text-base text-neutral-200 mt-4 z-10 drop-shadow-xl"
+                style={{ textShadow: "2px 2px 2px rgba(0, 0, 0, 1)" }}
+              >
                 {project.description}
               </p>
               <div className="flex space-x-2 gap-2 z-10">

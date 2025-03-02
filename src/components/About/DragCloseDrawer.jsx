@@ -79,13 +79,13 @@ const DragCloseDrawer = ({ open, setOpen, children, picture }) => {
               bottom: 0.5,
             }}
           >
-            <div className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-neutral-900 p-4">
-              <button
-                onPointerDown={(e) => {
-                  controls.start(e);
-                }}
-                className="h-2 w-14 cursor-grab touch-none rounded-full bg-neutral-700 active:cursor-grabbing"
-              ></button>
+            <div
+              className="absolute left-0 right-0 top-0 z-10 flex justify-center bg-neutral-900 p-4 cursor-grab touch-none "
+              onPointerDown={(e) => {
+                controls.start(e);
+              }}
+            >
+              <button className="h-2 w-14 cursor-grab touch-none rounded-full bg-neutral-700 active:cursor-grabbing"></button>
             </div>
             <div className="relative z-0 h-full overflow-y-scroll p-4 flex flex-col lg:flex-row items-center justify-start scrollable-hidden custom-navbar-padding">
               <img

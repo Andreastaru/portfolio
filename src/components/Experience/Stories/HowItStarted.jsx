@@ -9,5 +9,5 @@ export const HowItStarted = ({ paragraph }) => {
 };
 
 HowItStarted.propTypes = {
-  paragraph: PropTypes.string.isRequired,
+  paragraph: PropTypes.node.isRequired,
 };

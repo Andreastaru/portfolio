@@ -190,3 +190,16 @@ textarea {
     margin-bottom: 2rem !important;
   }
 }
+
+.paragraph-mobile-padding-side {
+  @media (max-width: 480px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.padding-top-mobile {
+  @media (max-width: 768px) {
+    padding-top: 1rem;
+  }
+}

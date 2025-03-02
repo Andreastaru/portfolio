@@ -9,5 +9,5 @@ export const WhatsNext = ({ paragraph }) => {
 };
 
 WhatsNext.propTypes = {
-  paragraph: PropTypes.string.isRequired,
+  paragraph: PropTypes.node.isRequired,
 };

@@ -9,5 +9,5 @@ export const SmallVictories = ({ paragraph }) => {
 };
 
 SmallVictories.propTypes = {
-  paragraph: PropTypes.string.isRequired,
+  paragraph: PropTypes.node.isRequired,
 };

@@ -1,4 +1,5 @@
 import { createClient } from "contentful";
+import parse from "html-react-parser";
 
 const client = createClient({
   space: import.meta.env.REACT_APP_CONTENFUL_SPACE_ID,
@@ -131,7 +132,7 @@ const _fetchParagraphs = async () => {
 
       return {
         title,
-        paragraph,
+        paragraph: parse(paragraph),
       };
     });
 
