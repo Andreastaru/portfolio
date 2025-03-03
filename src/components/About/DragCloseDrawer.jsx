@@ -18,7 +18,13 @@ const DragCloseDrawer = ({ open, setOpen, children, picture }) => {
   useEffect(() => {
     if (open) {
       document.body.classList.add("no-scroll");
-      const preventDefault = (e) => e.preventDefault();
+
+      const preventDefault = (e) => {
+        if (!drawerRef.current.contains(e.target)) {
+          e.preventDefault();
+        }
+      };
+
       document.addEventListener("touchmove", preventDefault, {
         passive: false,
       });
@@ -30,7 +36,7 @@ const DragCloseDrawer = ({ open, setOpen, children, picture }) => {
     } else {
       document.body.classList.remove("no-scroll");
     }
-  }, [open]);
+  }, [open, drawerRef]);
 
   const handleClose = async () => {
     animate(scope.current, {
