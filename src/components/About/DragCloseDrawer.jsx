@@ -18,13 +18,18 @@ const DragCloseDrawer = ({ open, setOpen, children, picture }) => {
   useEffect(() => {
     if (open) {
       document.body.classList.add("no-scroll");
+      const preventDefault = (e) => e.preventDefault();
+      document.addEventListener("touchmove", preventDefault, {
+        passive: false,
+      });
+
+      return () => {
+        document.removeEventListener("touchmove", preventDefault);
+        document.body.classList.remove("no-scroll");
+      };
     } else {
       document.body.classList.remove("no-scroll");
     }
-
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
   }, [open]);
 
   const handleClose = async () => {

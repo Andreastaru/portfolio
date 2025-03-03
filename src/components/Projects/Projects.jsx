@@ -58,13 +58,13 @@ export const Projects = () => {
               />
               <p
                 className="font-bold text-white text-lg z-10"
-                style={{ textShadow: "2px 2px px rgba(0, 0, 0, 1)" }}
+                style={{ textShadow: "2px 2px 2px rgba(0, 0, 0, 1)" }}
               >
                 {project.project_name}
               </p>
               <p
                 className="font-normal text-base text-neutral-200 mt-4 z-10 drop-shadow-xl"
-                style={{ textShadow: "2px 2px px rgba(0, 0, 0, 1)" }}
+                style={{ textShadow: "2px 2px 2px rgba(0, 0, 0, 1)" }}
               >
                 {project.description}
               </p>
@@ -104,7 +104,7 @@ export const Projects = () => {
               />
               <p
                 className="font-bold text-white text-lg z-10"
-                style={{ textShadow: "2px 2px px rgba(0, 0, 0, 1)" }}
+                style={{ textShadow: "2px 2px 2px rgba(0, 0, 0, 1)" }}
               >
                 {project.project_name}
               </p>

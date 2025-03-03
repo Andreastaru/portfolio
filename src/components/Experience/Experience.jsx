@@ -49,10 +49,10 @@ function Experience() {
       value: "how_it_started",
       content: (
         <div className="w-full h-[60vh] xl:h-[40vh] lg:h-[40vh] md:h-[40vh] overflow-y-auto rounded-2xl p-10 text-white backdrop-blur-custom border  border-white custom-scrollbar flex flex-col">
-          <p className=" underline underline-offset-8 text-center text-xl  top-0  z-10 font-semibold pt-14 mb-4 custom-padding-top">
+          <p className=" underline underline-offset-8 text-center text-xl  top-0  z-10 font-semibold pt-14 mb-4 custom-padding-top paragraph-mobile-padding-side paragraph-mobile-padding-bottom">
             It all started with a simple idea
           </p>
-          <div className="flex-grow flex items-center justify-center pb-4">
+          <div className="flex-grow flex items-center justify-center pb-4 paragraph-mobile-padding-bottom">
             <HowItStarted paragraph={experienceHowItStarted?.paragraph} />
           </div>
         </div>
@@ -108,7 +108,7 @@ function Experience() {
       value: "whats_next",
       content: (
         <div className="w-full h-[60vh] xl:h-[40vh] lg:h-[40vh] md:h-[40vh] overflow-y-auto rounded-2xl p-10 text-white backdrop-blur-custom border border-white custom-scrollbar flex flex-col">
-          <p className=" underline underline-offset-8 text-center text-xl  top-0  z-10 font-semibold pt-14 mb-4 custom-padding-top paragraph-mobile-padding-bottomparagraph-mobile-padding-side">
+          <p className=" underline underline-offset-8 text-center text-xl  top-0  z-10 font-semibold pt-14 mb-4 custom-padding-top paragraph-mobile-padding-bottom paragraph-mobile-padding-side">
             It&apos;s time to go further
           </p>
           <div className="flex-grow flex items-center justify-center pb-4 paragraph-mobile-padding-bottom">
