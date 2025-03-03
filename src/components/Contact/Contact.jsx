@@ -22,6 +22,7 @@ export const Contact = () => {
         <div
           className="text-2xl flex text-center container custom-padding-left-right"
           ref={elementRef}
+          id="SUCCESS"
         >
           Thank you for your message! I have received it and will get back to
           you soon.
