@@ -103,7 +103,7 @@ function About() {
       <h1 className="text-white text-center  text-2xl custom-padding-bottom">
         My Certifications
       </h1>
-      <AnimatedTestimonials testimonials={certifications} />
+      <AnimatedTestimonials testimonials={certifications} autoplay={true} />
     </div>
   );
 }

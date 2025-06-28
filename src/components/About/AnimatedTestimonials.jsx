@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 
 export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   const [active, setActive] = useState(0);
+  const [isAutoplaying, setIsAutoplaying] = useState(autoplay);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -20,11 +21,17 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   };
 
   useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
+    setIsAutoplaying(autoplay);
+  }, [autoplay]);
+
+  useEffect(() => {
+    if (isAutoplaying) {
+      const interval = setInterval(() => {
+        handleNext();
+      }, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [isAutoplaying]);
 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
@@ -33,7 +40,15 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
   return (
     <>
       <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20"></div>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+      <article
+        className="relative grid grid-cols-1 md:grid-cols-2 gap-20"
+        onMouseEnter={() => setIsAutoplaying(false)}
+        onMouseLeave={() => setIsAutoplaying(true)}
+        onTouchStart={() => setIsAutoplaying(false)}
+        onTouchEnd={() => {
+          setTimeout(() => setIsAutoplaying(true), 5000);
+        }}
+      >
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
@@ -138,6 +153,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                 href={testimonials[active].cert_url}
                 target="_blank"
                 rel="noreferrer"
+                onChange={!autoplay}
               >
                 Check out {testimonials[active].name}&apos;s certification here!
               </a>
@@ -158,7 +174,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
             </button>
           </div>
         </div>
-      </div>
+      </article>
     </>
   );
 };
